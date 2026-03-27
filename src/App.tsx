@@ -687,8 +687,6 @@ const Aprender = ({
     return [];
   };
 
-  const hasProgress = (projectId: string) => getProgress(projectId).length > 0;
-
   return (
     <div className="section container animate-fade">
       <div style={{ marginBottom: "48px" }}>
