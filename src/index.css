@@ -383,69 +383,45 @@ body[data-theme='dark'] .sg-modal-hero {
   letter-spacing: 0.04em;
 }
 
-/* ── Features Row ───────────────────────── */
-.features-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 120px;
-}
-.feature-card {
-  padding: 32px 24px;
-  border-radius: var(--radius);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  transition: var(--transition);
-}
-.feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-.feature-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  background: var(--accent-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-.feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
-.feature-card p { color: var(--text-muted); font-size: 0.92rem; }
-
-/* ── Models Showcase ────────────────────── */
-.models-section { margin-top: 120px; }
-.models-section-header {
+/* ── Home Informativos ──────────────────── */
+.home-info-section { margin-top: 120px; }
+.home-info-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 44px;
 }
-.models-section-header h2 { font-size: 2.6rem; margin-bottom: 12px; }
-.models-section-header p { color: var(--text-muted); font-size: 1.05rem; max-width: 500px; margin: 0 auto; }
-
-.models-grid {
+.home-info-header h2 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+.home-info-header p {
+  color: var(--text-muted);
+  font-size: 1.03rem;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+.home-info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
-.model-card {
+.home-info-item {
   background: var(--surface);
-  border-radius: var(--radius);
   border: 1px solid var(--border);
-  overflow: hidden;
-  cursor: pointer;
-  transition: var(--transition);
+  border-radius: var(--radius);
+  padding: 24px 22px;
   box-shadow: var(--shadow-sm);
 }
-.model-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-.model-card-illustration {
-  height: 220px;
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--secondary) 40%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.home-info-item h3 {
+  font-size: 1.08rem;
+  margin-bottom: 10px;
+  color: var(--text);
 }
-.model-card-body { padding: 20px; }
-.model-card-body h3 { font-size: 1.15rem; margin-bottom: 6px; }
-.model-card-body p { font-size: 0.82rem; color: var(--text-muted); }
+.home-info-item p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
 
 /* ── How It Works ───────────────────────── */
 .how-section { margin-top: 120px; text-align: center; }
@@ -1638,9 +1614,8 @@ body[data-theme='dark'] .sg-modal-hero {
   .hero-visual { order: -1; }
   .hero-illustration-wrap { max-width: 360px; margin: 0 auto; }
   .hero-float-badge { display: none; }
-  .features-row { grid-template-columns: 1fr 1fr; }
+  .home-info-grid { grid-template-columns: 1fr 1fr; }
   .how-steps { grid-template-columns: 1fr; gap: 32px; }
-  .models-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
   .course-layout { grid-template-columns: 1fr; }
   .aprender-layout { grid-template-columns: 1fr; }
   .aprender-sidebar { position: static; max-height: none; }
@@ -1661,9 +1636,11 @@ body[data-theme='dark'] .sg-modal-hero {
 
   .hero-title { font-size: 2.4rem; }
   .hero-illustration-wrap { max-width: 280px; aspect-ratio: 1; border-radius: 28px; }
-  .features-row { grid-template-columns: 1fr; margin-top: 60px; }
-  .models-section { margin-top: 60px; }
-  .models-section-header h2 { font-size: 1.8rem; }
+  .home-info-section { margin-top: 60px; }
+  .home-info-header h2 { font-size: 1.8rem; }
+  .home-info-header p { font-size: 0.95rem; }
+  .home-info-grid { grid-template-columns: 1fr; gap: 16px; }
+  .home-info-item { padding: 20px 18px; }
   .how-section { margin-top: 60px; }
   .how-section h2 { font-size: 1.8rem; margin-bottom: 40px; }
   .cta-banner { margin-top: 60px; padding: 48px 24px; border-radius: 16px; }

@@ -1712,61 +1712,53 @@ function App() {
               </div>
             </div>
 
-            {/* Features */}
-            <div className="features-row">
-              {[
-                {
-                  icon: "🎓",
-                  title: "Didática Visual",
-                  desc: "Aprenda com diagramas técnicos e ilustrações passo a passo.",
-                },
-                {
-                  icon: "🎨",
-                  title: "Personalização",
-                  desc: "Teste combinações de cores em tempo real no nosso Studio Criativo.",
-                },
-                {
-                  icon: "📖",
-                  title: "Guia Completo",
-                  desc: "37 pontos catalogados com tutorial, simbologia e aplicações.",
-                },
-              ].map((f) => (
-                <div key={f.title} className="feature-card">
-                  <div className="feature-icon">{f.icon}</div>
-                  <h3>{f.title}</h3>
-                  <p>{f.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Models Showcase */}
-            <div className="models-section">
-              <div className="models-section-header">
-                <h2 className="serif">Modelos para Praticar</h2>
+            {/* Informativos de Crochê */}
+            <section
+              className="home-info-section"
+              aria-label="Informativos de crochê"
+            >
+              <div className="home-info-header">
+                <h2 className="serif">Fundamentos para Evoluir no Crochê</h2>
                 <p>
-                  Escolha um modelo e aprenda com o guia interativo completo.
+                  Antes de acelerar a produção, fortalecer a base técnica ajuda
+                  a evitar erros e deixa o resultado mais bonito e consistente.
                 </p>
               </div>
-              <div className="models-grid">
-                {PROJECTS.slice(0, 6).map((p) => (
-                  <div
-                    key={p.id}
-                    className="model-card"
-                    onClick={() => handleProjectSelect(p)}
-                  >
-                    <div className="model-card-illustration">
-                      <ProjectIllustration projectId={p.id} color="#22a55b" />
-                    </div>
-                    <div className="model-card-body">
-                      <h3>{p.name}</h3>
-                      <p>
-                        {p.estimatedYarn} · {p.difficulty}
-                      </p>
-                    </div>
-                  </div>
+
+              <div className="home-info-grid">
+                {[
+                  {
+                    title: "Escolha correta de agulha e fio",
+                    desc: "Sempre compare a espessura do fio com a numeração da agulha. Essa combinação define conforto nas mãos e o caimento final da peça.",
+                  },
+                  {
+                    title: "Controle de tensão",
+                    desc: "Manter os pontos com tensão uniforme evita ondulações e repuxos. Faça pequenas amostras para ajustar seu ritmo antes de iniciar o projeto.",
+                  },
+                  {
+                    title: "Leitura de receita sem confusão",
+                    desc: "Leia todos os passos antes de começar, marque carreiras concluídas e identifique abreviações. Isso reduz retrabalho e melhora a precisão.",
+                  },
+                  {
+                    title: "Acabamento faz diferença",
+                    desc: "Arremates bem escondidos, blocagem e costuras limpas transformam uma peça simples em um trabalho com aparência profissional.",
+                  },
+                  {
+                    title: "Prática consciente",
+                    desc: "Sessões curtas e frequentes, com pausas para mãos e ombros, ajudam na memória muscular e na evolução constante sem sobrecarga.",
+                  },
+                  {
+                    title: "Cuidados com a peça pronta",
+                    desc: "Lave com delicadeza, seque na horizontal e guarde sem deformar. A conservação correta mantém textura, cor e estrutura por mais tempo.",
+                  },
+                ].map((info) => (
+                  <article key={info.title} className="home-info-item">
+                    <h3>{info.title}</h3>
+                    <p>{info.desc}</p>
+                  </article>
                 ))}
               </div>
-            </div>
+            </section>
 
             {/* How It Works */}
             <div className="how-section">
