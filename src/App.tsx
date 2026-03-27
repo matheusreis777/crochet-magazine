@@ -236,13 +236,7 @@ const Customizacao = ({
         </p>
       </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(280px, 1fr) minmax(280px, 420px)",
-          gap: "48px",
-        }}
-      >
+      <div className="customizacao-grid">
         {/* Preview */}
         <div
           className="card"
@@ -1606,7 +1600,9 @@ function App() {
           <button
             className="hamburger"
             onClick={() => setMobileMenuOpen(true)}
-            aria-label="Abrir menu"
+            aria-label="Abrir menu de navegação"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu-panel"
           >
             <HamburgerIcon />
           </button>
@@ -1614,53 +1610,56 @@ function App() {
       </div>
 
       {/* ── Mobile Menu ─────────────────────── */}
-      {mobileMenuOpen && (
+      <div
+        className={`mobile-menu${mobileMenuOpen ? " open" : ""}`}
+        onClick={() => setMobileMenuOpen(false)}
+        aria-hidden={!mobileMenuOpen}
+      >
         <div
-          className="mobile-menu open"
-          onClick={() => setMobileMenuOpen(false)}
+          className="mobile-menu-panel"
+          onClick={(e) => e.stopPropagation()}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu de navegação"
         >
-          <div
-            className="mobile-menu-panel"
-            onClick={(e) => e.stopPropagation()}
+          <button
+            className="mobile-menu-close"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Fechar menu"
           >
+            ✕
+          </button>
+          {NAV_ITEMS.map((item) => (
             <button
-              className="mobile-menu-close"
-              onClick={() => setMobileMenuOpen(false)}
+              key={item.id}
+              className={`mobile-menu-link ${activeTab === item.id ? "active" : ""}`}
+              onClick={() => navigate(item.id)}
             >
-              ✕
+              {item.label}
             </button>
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item.id}
-                className={`mobile-menu-link ${activeTab === item.id ? "active" : ""}`}
-                onClick={() => navigate(item.id)}
-              >
-                {item.label}
-              </button>
-            ))}
-            <button
-              className="mobile-theme-toggle"
-              onClick={toggleTheme}
-              aria-label={
-                theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"
-              }
-            >
-              <ThemeIcon dark={theme === "dark"} />
-              <span>{theme === "dark" ? "Modo Claro" : "Modo Escuro"}</span>
-            </button>
-            <button
-              className="btn btn-primary"
-              style={{ marginTop: "16px" }}
-              onClick={() => navigate("aprender")}
-            >
-              Começar Grátis
-            </button>
-          </div>
+          ))}
+          <button
+            className="mobile-theme-toggle"
+            onClick={toggleTheme}
+            aria-label={
+              theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"
+            }
+          >
+            <ThemeIcon dark={theme === "dark"} />
+            <span>{theme === "dark" ? "Modo Claro" : "Modo Escuro"}</span>
+          </button>
+          <button
+            className="btn btn-primary"
+            style={{ marginTop: "16px" }}
+            onClick={() => navigate("aprender")}
+          >
+            Começar Grátis
+          </button>
         </div>
-      )}
+      </div>
 
       {/* ── Main Content ────────────────────── */}
-      <main style={{ paddingTop: "104px" }}>
+      <main className="main-content">
         {/* HOME */}
         {activeTab === "home" && (
           <div className="container section animate-fade">
