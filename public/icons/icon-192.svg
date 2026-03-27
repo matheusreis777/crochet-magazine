@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <rect width="192" height="192" rx="40" fill="#22a55b"/>
+  <g transform="translate(96 96)">
+    <!-- Yarn ball -->
+    <circle r="48" fill="none" stroke="#fff" stroke-width="4"/>
+    <path d="M-30 -10 Q0 -50 30 -10" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M-25 10 Q0 -30 25 10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-20 25 Q0 -5 20 25" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Hook -->
+    <path d="M20 -20 L50 -50 Q55 -55 50 -58 Q46 -60 44 -56" fill="none" stroke="#e8f5e9" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>
