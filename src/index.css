@@ -531,7 +531,6 @@ body[data-theme='dark'] .sg-modal-hero {
   background: none;
   border: none;
   color: var(--primary);
-  fontWeight: 700;
   cursor: pointer;
   margin-bottom: 24px;
   display: flex;
